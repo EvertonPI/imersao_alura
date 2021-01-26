@@ -1,7 +1,8 @@
 {
+  "anime": "https://pm1.narvii.com/6310/e7d9b20ac79b603abc42192500e5877825ccd5ec_hq.jpg",
   "bg": "https://i2.wp.com/css-tricks.com/wp-content/uploads/2017/06/css-is-awesome-scaled.jpg?resize=1536%2C1208&ssl=1",
-  "title": "Quiz CSS da Alura",
-  "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
+  "title": "Quiz Anime Masashi Kishimoto",
+  "description": "Teste os seus conhecimentos sobre Masashi Kishimoto e vamos ver quantos animes ele fez você sabe .",
   "questions": [
     {
       "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",

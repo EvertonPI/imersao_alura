@@ -26,7 +26,7 @@ export const QuizContainer = styled.div`
 
 export default function Home() {
   return (
-    <QuizBackground backgroundImage={db.bg}>
+    <QuizBackground backgroundImage={db.anime}>
       <QuizContainer>
         <QuizLogo />
         <Widget>
@@ -42,7 +42,11 @@ export default function Home() {
           <Widget.Content>
             <h1>Quizes da Galera</h1>
 
-            <p>lorem ipsum dolor sit amet...</p>
+            <p>
+              {" "}
+              Aqui será os trabalho da gaelra e as dúvidas, bora fazer projetos
+              incriveis .
+            </p>
           </Widget.Content>
         </Widget>
         <Footer />
