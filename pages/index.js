@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import db from "../db.json";
+import QuizHead from "../src/components/QuizHeader";
 import Widget from "../src/components/Widget";
 import QuizLogo from "../src/components/QuizLogo";
 import QuizBackground from "../src/components/QuizBackground";
@@ -26,32 +27,35 @@ export const QuizContainer = styled.div`
 
 export default function Home() {
   return (
-    <QuizBackground backgroundImage={db.anime}>
-      <QuizContainer>
-        <QuizLogo />
-        <Widget>
-          <Widget.Header>
-            <h1>{db.title}</h1>
-          </Widget.Header>
-          <Widget.Content>
-            <p>{db.description}</p>
-          </Widget.Content>
-        </Widget>
+    <>
+      <QuizHead props={db} />
+      <QuizBackground backgroundImage={db.anime}>
+        <QuizContainer>
+          <QuizLogo />
+          <Widget>
+            <Widget.Header>
+              <h1>{db.title}</h1>
+            </Widget.Header>
+            <Widget.Content>
+              <p>{db.description}</p>
+            </Widget.Content>
+          </Widget>
 
-        <Widget>
-          <Widget.Content>
-            <h1>Quizes da Galera</h1>
+          <Widget>
+            <Widget.Content>
+              <h1>Quizes da Galera</h1>
 
-            <p>
-              {" "}
-              Aqui será os trabalho da gaelra e as dúvidas, bora fazer projetos
-              incriveis .
-            </p>
-          </Widget.Content>
-        </Widget>
-        <Footer />
-      </QuizContainer>
-      <GitHubCorner projectUrl="https://github.com/EvertonPI" />
-    </QuizBackground>
+              <p>
+                {" "}
+                Aqui será os trabalho da gaelra e as dúvidas, bora fazer
+                projetos incriveis .
+              </p>
+            </Widget.Content>
+          </Widget>
+          <Footer />
+        </QuizContainer>
+        <GitHubCorner projectUrl="https://github.com/EvertonPI" />
+      </QuizBackground>
+    </>
   );
 }
