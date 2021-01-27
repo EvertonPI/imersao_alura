@@ -1,18 +1,15 @@
+import { useState } from "react";
 import styled from "styled-components";
 import db from "../db.json";
+
 import QuizHead from "../src/components/QuizHeader";
 import Widget from "../src/components/Widget";
 import QuizLogo from "../src/components/QuizLogo";
 import QuizBackground from "../src/components/QuizBackground";
 import Footer from "../src/components/Footer";
 import GitHubCorner from "../src/components/GitHubCorner";
-
-// const BackgroundImage = styled.div`
-//   background-image: url(${db.bg});
-//   flex: 1;
-//   background-size: cover;
-//   background-position: center;
-// `;
+import InputQuiz from "../src/components/InputQuiz";
+import { ButtonQuiz } from "../src/components/ButtonQuiz";
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -26,6 +23,16 @@ export const QuizContainer = styled.div`
 `;
 
 export default function Home() {
+  const [name, setName] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    router.push(`/quiz?name=${name}`);
+    console.log("Fazendo uma submissão por meio do react");
+  };
+  const handleChangeName = ({ target }) => {
+    setName(target.value);
+    console.log(target.value);
+  };
   return (
     <>
       <QuizHead props={db} />
@@ -38,6 +45,16 @@ export default function Home() {
             </Widget.Header>
             <Widget.Content>
               <p>{db.description}</p>
+              <form onSubmit={handleSubmit}>
+                <InputQuiz
+                  onChange={handleChangeName}
+                  placeholder="Diz ai seu nome"
+                />
+                <ButtonQuiz type="submit" disabled={name.length === ""}>
+                  Jogar
+                  {name}
+                </ButtonQuiz>
+              </form>
             </Widget.Content>
           </Widget>
 

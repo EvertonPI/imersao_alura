@@ -1,3 +1,5 @@
+/* eslint-disable import/no-unresolved */
+import React from "react";
 import Head from "next/head";
 
 export default function QuizHeader({ props }) {
